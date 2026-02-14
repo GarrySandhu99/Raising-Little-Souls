@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -16,9 +21,16 @@ body {
   color: #1f2937;
   font-family: "Source Sans 3", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-/* Header */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header – desktop: one row; small screens: logo on top, nav bar underneath */
 .site-header {
   position: sticky;
   top: 0;
@@ -30,12 +42,15 @@ body {
 
 .site-header .inner {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  height: 4rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0;
 }
 
 .site-logo {
@@ -45,6 +60,7 @@ body {
   letter-spacing: -0.02em;
   color: #05aba9;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .site-logo:hover {
@@ -54,6 +70,7 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -62,10 +79,59 @@ body {
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
+  padding: 0.35em 0;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .site-nav a:hover {
   color: #05aba9;
+}
+
+/* Desktop: keep logo and nav in one row */
+.site-header .site-logo-wrap {
+  flex-shrink: 0;
+}
+
+.site-header .site-nav-wrap {
+  flex-shrink: 0;
+}
+
+/* Small screens: logo on top, nav in a bar underneath (logo never shrinks) */
+@media (max-width: 767px) {
+  .site-header .inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    min-height: 0;
+  }
+
+  .site-header .site-logo-wrap {
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #f1e7e4;
+  }
+
+  .site-header .site-logo {
+    font-size: 1.5rem;
+    display: inline-block;
+  }
+
+  .site-header .site-nav-wrap {
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid #f1e7e4;
+  }
+
+  .site-header .site-nav {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .site-header .site-nav a {
+    font-size: 0.8125rem;
+  }
 }
 
 /* Main content */
@@ -79,6 +145,7 @@ main .main-inner {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  width: 100%;
 }
 
 /* Headings */
@@ -103,6 +170,7 @@ h2 {
 /* VLOGS section (home) – asymmetric grid with featured card */
 .vlogs-section {
   padding: 2.5rem 1rem 3rem;
+  width: 100%;
 }
 
 .vlogs-section .section-title {
@@ -337,6 +405,8 @@ h2 {
   max-width: 65ch;
   font-size: 1.125rem;
   line-height: 1.7;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .article-body p {
@@ -395,6 +465,8 @@ h2 {
 
 .content-block {
   max-width: 42rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .content-block p {
@@ -455,6 +527,7 @@ h2 {
 
 .site-footer .inner {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -502,4 +575,109 @@ h2 {
 
 .no-posts {
   color: #6b7280;
+}
+
+/* ========== Mobile & small screens – auto-size to screen ========== */
+@media (max-width: 639px) {
+  main .main-inner {
+    padding: 1.25rem 1rem;
+  }
+
+  .vlogs-section {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .vlogs-section .section-title {
+    font-size: 1.5rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .post-grid {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .post-card-content {
+    padding: 1rem 1.25rem;
+  }
+
+  .post-card-img {
+    height: 180px;
+  }
+
+  .post-card h3 {
+    font-size: 1rem;
+  }
+
+  .post-card .excerpt {
+    font-size: 0.8125rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .category-intro {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content-wrap {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .article-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .article-body {
+    font-size: 1rem;
+  }
+
+  .article-hero {
+    max-height: 260px;
+  }
+
+  .content-block {
+    max-width: 100%;
+  }
+
+  .site-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-footer .top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer nav {
+    justify-content: center;
+  }
+
+  .disclaimer-content h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .vlogs-section,
+  main .main-inner {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .post-card-content {
+    padding: 0.875rem 1rem;
+  }
+
+  .post-card-img {
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
 }
