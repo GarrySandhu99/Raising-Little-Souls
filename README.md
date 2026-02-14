@@ -11,12 +11,12 @@ Static website (HTML + CSS only). No JavaScript, Node, React, or Next.js.
   ```
   Then open http://localhost:8080
 
-## What’s here
+## What's here
 
 - `index.html` — Home (VLOGS list)
 - `about.html` — About
 - `contact.html` — Contact
-- `category/` — Sleep, Feeding & Nutrition, Milestones, Parenting, Product Picks
+- `category/` — Sleep, Feeding & Nutrition, Baby Activities, Product Picks
 - `posts/` — Individual post pages
 - `styles.css` — All styling (colours, layout, fonts)
 
