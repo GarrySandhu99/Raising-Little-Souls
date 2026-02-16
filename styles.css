@@ -30,6 +30,40 @@ img {
   height: auto;
 }
 
+/* ========== Image sizing helpers ==========
+   Use the `.custom-size-image` class on an <img> and set the
+   --img-width and --img-height variables in this file to control
+   the image size for different pages.
+
+   Example (edit these values below to change the About page image):
+   .about-hero-image {
+     --img-width: 1200px;
+     --img-height: auto;
+   }
+============================================= */
+
+.custom-size-image {
+  width: var(--img-width, auto);
+  height: var(--img-height, auto);
+  max-width: none;
+  max-height: none;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain; /* preserves aspect ratio when both dimensions set */
+}
+
+/* About page hero image — full-bleed centered, fixed height */
+.about-hero-image {
+  width: 100vw; /* span full viewport width */
+  height: 600px; /* fixed height as requested */
+  max-width: none;
+  max-height: none;
+  margin-left: calc(50% - 50vw); /* center the full-bleed image */
+  margin-right: calc(50% - 50vw);
+  display: block;
+  object-fit: cover; /* fill area while preserving aspect ratio (cropping as needed) */
+}
+
 /* Header – desktop: one row; small screens: logo on top, nav bar underneath */
 .site-header {
   position: sticky;
@@ -228,7 +262,9 @@ h2 {
   color: inherit;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
