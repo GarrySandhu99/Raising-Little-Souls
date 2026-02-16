@@ -62,6 +62,8 @@ img {
   /* center and leave 50px gap on left and right */
   margin-left: calc(50% - 50vw + 50px);
   margin-right: calc(50% - 50vw + 50px);
+  /* small gap below the image before the heading */
+  margin-bottom: 24px;
   display: block;
   object-fit: cover; /* fill area while preserving aspect ratio (cropping as needed) */
 }
@@ -377,6 +379,18 @@ h2 {
   object-fit: cover;
   display: block;
   margin-bottom: 0;
+}
+
+/* Taller hero variant for long-form posts (adjustable) */
+.article-hero.tall-hero {
+  height: 700px; /* desktop/tablet height */
+  max-height: none;
+}
+
+@media (max-width: 639px) {
+  .article-hero.tall-hero {
+    height: 400px; /* smaller height on phones */
+  }
 }
 
 @media (min-width: 640px) {
