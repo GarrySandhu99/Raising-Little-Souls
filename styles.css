@@ -54,12 +54,14 @@ img {
 
 /* About page hero image — full-bleed centered, fixed height */
 .about-hero-image {
-  width: 100vw; /* span full viewport width */
-  height: 600px; /* fixed height as requested */
+  /* span viewport minus 50px on each side */
+  width: calc(100vw - 100px);
+  height: 600px; /* fixed height (change if you want a different height) */
   max-width: none;
   max-height: none;
-  margin-left: calc(50% - 50vw); /* center the full-bleed image */
-  margin-right: calc(50% - 50vw);
+  /* center and leave 50px gap on left and right */
+  margin-left: calc(50% - 50vw + 50px);
+  margin-right: calc(50% - 50vw + 50px);
   display: block;
   object-fit: cover; /* fill area while preserving aspect ratio (cropping as needed) */
 }
