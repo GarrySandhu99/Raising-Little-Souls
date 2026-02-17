@@ -94,17 +94,29 @@ img {
 }
 
 .site-logo {
+  /* Brand mark + wordmark (badge on the left) — compact and premium */
   font-family: "DM Sans", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #05aba9;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #083737;
   text-decoration: none;
-  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .site-logo:hover {
   opacity: 0.9;
+}
+
+.site-logo .mark {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg,#05aba9,#2ec2bb);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(5,171,169,0.15);
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .site-nav {
@@ -142,28 +154,26 @@ img {
 @media (max-width: 767px) {
   .site-header .inner {
     flex-direction: column;
-    align-items: stretch;
+    /* center content in each row so vertical spacing is balanced */
+    align-items: center;
     padding: 0;
     min-height: 0;
   }
 
-  /* Reduce vertical spacing on small screens to fix excessive header height */
-  .site-header .site-logo-wrap {
-    padding: 0.25rem 1rem; /* smaller vertical padding */
+  /* Make logo and nav padding identical on small screens so the header feels
+     balanced (equal top/bottom spacing). Keep a subtle divider for clarity. */
+  .site-header .site-logo-wrap,
+  .site-header .site-nav-wrap {
+    padding: 0.35rem 1rem;
     text-align: center;
     border-bottom: 1px solid #f1e7e4;
+    width: 100%;
   }
 
   .site-header .site-logo {
     font-size: 1.5rem;
     display: inline-block;
     line-height: 1; /* ensure compact logo height */
-  }
-
-  .site-header .site-nav-wrap {
-    padding: 0.15rem 1rem; /* smaller vertical padding for nav bar */
-    background: rgba(0, 0, 0, 0.02);
-    border-bottom: 1px solid #f1e7e4;
   }
 
   .site-header .site-nav {
