@@ -10,6 +10,7 @@
 html {
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -74,6 +75,7 @@ img {
   top: 0;
   z-index: 50;
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #f1e7e4;
 }
@@ -145,8 +147,9 @@ img {
     min-height: 0;
   }
 
+  /* Reduce vertical spacing on small screens to fix excessive header height */
   .site-header .site-logo-wrap {
-    padding: 0.75rem 1rem;
+    padding: 0.25rem 1rem; /* smaller vertical padding */
     text-align: center;
     border-bottom: 1px solid #f1e7e4;
   }
@@ -154,10 +157,11 @@ img {
   .site-header .site-logo {
     font-size: 1.5rem;
     display: inline-block;
+    line-height: 1; /* ensure compact logo height */
   }
 
   .site-header .site-nav-wrap {
-    padding: 0.5rem 1rem;
+    padding: 0.15rem 1rem; /* smaller vertical padding for nav bar */
     background: rgba(0, 0, 0, 0.02);
     border-bottom: 1px solid #f1e7e4;
   }
@@ -169,6 +173,9 @@ img {
 
   .site-header .site-nav a {
     font-size: 0.8125rem;
+    padding: 0.45rem 0; /* slightly reduced link padding for compact rows */
+    min-height: 0; /* override desktop min-height to avoid tall links (compatible) */
+    line-height: 1; /* tighter line-height for small screens */
   }
 }
 
@@ -183,10 +190,13 @@ img {
   }
 
   .site-nav a {
-    padding: 0.75rem 0;
+    /* reduced vertical padding to make mobile nav more compact */
+    padding: 0.35rem 0;
     text-align: center;
     flex: none;
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
+    line-height: 1;
+    min-height: 0;
   }
 }
 
@@ -395,6 +405,8 @@ h2 {
   width: 100%;
   max-height: 420px;
   object-fit: cover;
+  /* nudge the crop slightly upward so the visible area shows a bit more top */
+  object-position: center 40%;
   display: block;
   margin-bottom: 0;
 }
@@ -706,6 +718,8 @@ h2 {
 
   .article-hero {
     max-height: 260px;
+    /* on small screens, show more of the top of the image (nudge crop upward) */
+    object-position: center 45%;
   }
 
   .content-block {
