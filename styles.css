@@ -1,7 +1,7 @@
 /* Raising Little Souls – static site styles (HTML + CSS only) */
 /* Colours: background #E8F4FC, surface #FFFFFF, primary #05ABA9, text #1F2937, muted #6B7280, border #F1E7E4 */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -94,29 +94,21 @@ img {
 }
 
 .site-logo {
-  /* Brand mark + wordmark (badge on the left) — compact and premium */
-  font-family: "DM Sans", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #083737;
+  /* Elegant display serif for a more premium, editorial look */
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0b6b66; /* deeper teal for a premium feel */
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+  flex-shrink: 0;
+  /* subtle highlight for depth */
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  transform: translateY(-1px);
 }
 
 .site-logo:hover {
   opacity: 0.9;
-}
-
-.site-logo .mark {
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(135deg,#05aba9,#2ec2bb);
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(5,171,169,0.15);
-  flex-shrink: 0;
-  display: inline-block;
 }
 
 .site-nav {
