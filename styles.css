@@ -103,7 +103,7 @@ img {
   text-decoration: none;
   flex-shrink: 0;
   /* subtle highlight for depth */
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
 }
 
@@ -428,6 +428,15 @@ h2 {
 @media (min-width: 640px) {
   .article-hero {
     border-radius: 0 0 1rem 1rem;
+  }
+}
+
+/* Larger screens: increase hero height for article pages only (desktops/laptops).
+   This does not affect small screens – mobile rules remain unchanged. */
+@media (min-width: 1024px) {
+  .article-hero {
+    height: 600px;
+    max-height: none;
   }
 }
 
