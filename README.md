@@ -25,5 +25,6 @@ Static website (HTML + CSS only). No JavaScript, Node, React, or Next.js.
 1. Create a new `.html` file in `posts/` (copy an existing one and change the content).
 2. Add a card for it on `index.html` in the VLOGS grid.
 3. Add a card on the right `category/xxx.html` page.
+4. **Keep posts sorted by date** — Always place new posts in date order (newest first) on the homepage and in each category.
 
 You can host this on any host that serves static files (no server or build step needed).
