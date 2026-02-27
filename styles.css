@@ -1,7 +1,7 @@
 /* Raising Little Souls – static site styles (HTML + CSS only) */
 /* Colours: background #E8F4FC, surface #FFFFFF, primary #05ABA9, text #1F2937, muted #6B7280, border #F1E7E4 */
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -111,12 +111,11 @@ img {
   opacity: 0.9;
 }
 
-/* SVG logo on homepage */
+/* SVG logo on homepage — 300×60 */
 .site-logo-svg {
   display: block;
-  height: 2.75rem;
-  width: auto;
-  max-width: 280px;
+  width: 320px;
+  height: 60px;
 }
 
 .site-nav {
@@ -176,8 +175,8 @@ img {
     line-height: 1; /* ensure compact logo height */
   }
   .site-logo-svg {
-    height: 2.25rem;
-    max-width: 220px;
+    width: 300px;
+    height: 60px;
   }
 
   .site-header .site-nav {
